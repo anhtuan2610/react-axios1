@@ -5,6 +5,7 @@ type Props = {
   setIsShow: (isShow: boolean) => void;
 }
 
+// Sử dụng Portal
 // Modal được render bên ngoài DOM gốc, ngay dưới dưới thẻ <body>.
 // Modal được khai báo với z-10. Ngay cả khi một phần tử bên ngoài Modal được khai báo với z-20, Modal vẫn sẽ xuất hiện phía trên phần tử đó.
 // Là do Modal được render sử dụng Portal, đặt nó cùng cấp với phần tử gốc trong DOM.
@@ -34,6 +35,6 @@ export default function Modal({isShow , setIsShow} : Props ) {
           </div>
         </div>
       ) : null}
-    </div>, document.getElementById("portal") as HTMLElement
+    </div>, document.getElementById("portal") as HTMLElement // document.getElementById("portal")! khẳng định là thằng này luôn có (không null hoặc undefind)
   );
 }

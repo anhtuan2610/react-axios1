@@ -1,10 +1,10 @@
-import ShopApi from "./pages/ShopApi"
+import ShopPageApi from "./pages/ShopPageApi"
 
 function App() {
 
   return (
     <div>
-      <ShopApi/>
+      <ShopPageApi/>
     </div>
   )
 }

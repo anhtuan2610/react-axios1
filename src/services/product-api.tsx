@@ -2,7 +2,6 @@ import { get, post, remove, update } from ".";
 import { Product } from "../components/Shop/Form";
 
 export type TProductNoId = Omit<Product, "id">; // add
-export type TProductUpdate = Omit<Product, "id" | "description">; // update (title, price)
 
 export async function getProducts(params?: object) {
   return await get<Product[]>({
@@ -18,7 +17,7 @@ export async function createProduct(data: TProductNoId) {
   });
 }
 
-export async function editProduct(id: number, data: TProductUpdate) {
+export async function editProduct(id: number, data: TProductNoId) {
    await update({
     url: `/products/${id}`,
     data: data,
